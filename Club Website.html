@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #content {
+            display: none;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <form id="passwordForm">
+            <h2>Unkn0wn Racers Club Only</h2>
+            <input type="password" id="passwordInput" placeholder="Enter Password" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <div id="content">
+            <section id="about">
+                <h2>About Us</h2>
+                <p>Welcome to our street racing community, where we celebrate the thrill of racing while prioritizing safety. We organize safe and controlled events, working closely with local authorities to ensure compliance with traffic laws. Our goal is to promote responsible racing and build a strong community of enthusiasts. Join us for an adrenaline-fueled experience where passion meets safety!</p>
+            </section>
+            <section id="events">
+                <h2>Upcoming Events</h2>
+                <p> Currently there are no races as the club is in its beta form.</p>
+            </section>
+            <section id="join">
+                <h2>Join Us</h2>
+                <p>If you would like to join the club, please send an email and we would get in touch with you. There will be some tests to make sure that you can safely execute driving at speeds which could be otherwise dangerous.</p>
+            </section>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Email: somebodyrandom@onmail.com</p>
+                <p>Phone: 773-800-9190</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var password = document.getElementById("passwordInput").value;
+            if (password === "password") {
+                document.getElementById("container").innerHTML = document.getElementById("content").innerHTML;
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>
